@@ -1,1 +1,1 @@
-web: gunicorn movie-castle:app --log-file -
+web: gunicorn app:app --log-file -
