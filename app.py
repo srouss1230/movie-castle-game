@@ -10,10 +10,10 @@ app = Flask(__name__)
 tmdb.API_KEY = "fe80472bacff902901720dcdaf98e60c" # sets up the API Key in the py API
 
 # log in to mysql account and db
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'nick'
-app.config['MYSQL_PASSWORD'] = 'nicksqlpw'
-app.config['MYSQL_DB'] = 'castle'
+app.config['MYSQL_HOST'] = 'us-cdbr-east-05.cleardb.net'
+app.config['MYSQL_USER'] = 'b59a6005561b64'
+app.config['MYSQL_PASSWORD'] = '6cda5fdf'
+app.config['MYSQL_DB'] = 'heroku_0cdf3077be5e51c'
 
 # set up all global vars
 actor1 = "temp"
