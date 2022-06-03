@@ -195,4 +195,5 @@ def updateStats():
     return jsonify(plays=results[0], wins=results[1], winsIn1=results[2], winsIn2=results[3], winsIn3=results[4], winsIn4=results[5], winsIn5=results[6], winsIn6=results[7])
 
 # run the app
-app.run(debug=True, port=3456, host='0.0.0.0')
+# app.run(debug=True, port=3456, host='0.0.0.0')
+app.run(debug = True)
