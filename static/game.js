@@ -134,3 +134,4 @@ function hideTMDBDetails(){
     $( "#TMDBDetails" ).attr("hidden", true);
     $( "#openTMDBDetails" ).attr("hidden", false);
 }
+//penm,
