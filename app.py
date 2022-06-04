@@ -35,6 +35,7 @@ token = auth.token_new()
 auth.token_validate_with_login(request_token=token['request_token'],username='shuantown',password='Cse330Final')
 if auth.success:
     print("IT WORKED!")
+    print(token['request_token'])
     session = auth.session_new(request_token=token['request_token']) # sets up the session
     session_id = session['session_id']
     account = tmdb.Account(session_id) # sets up the account associated with the session
@@ -45,7 +46,6 @@ if auth.success:
     listSize = movieList.info()['item_count'] # this is the number of movies in the array
 else:
     print("¯\_(ツ)_/¯")
-    print(token['request_token'])
 mysql = MySQL(app)
 
 # a function that handles all query code with an input of the query string
