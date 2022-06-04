@@ -43,7 +43,9 @@ if auth.success:
     movieList = tmdb.Lists(list_id, session_id) # retuns the TMDB list object
     movieArr = movieList.info()['items'] # this is the array of the movies which is returned by Get Details in API
     listSize = movieList.info()['item_count'] # this is the number of movies in the array
-
+else:
+    print("¯\_(ツ)_/¯")
+    print(token['request_token'])
 mysql = MySQL(app)
 
 # a function that handles all query code with an input of the query string
