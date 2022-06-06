@@ -36,7 +36,7 @@ movieRecommended3 = "temp"
 # set up the link with TMDB and the account
 auth = tmdb.Authentication()
 token = auth.token_new()
-auth.token_validate_with_login(request_token=token['request_token'],username=config_object["user"],password=config_object["pass"])
+auth.token_validate_with_login(request_token=token['request_token'],username=config_object["TMDB-LOGIN"]["user"],password=config_object["TMDB-LOGIN"]["pass"])
 if auth.success:
     print("IT WORKED!")
     print(token['request_token'])
