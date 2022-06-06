@@ -2,10 +2,14 @@
 from flask import Flask, render_template, request, jsonify
 from datetime import datetime
 from flask_mysqldb import MySQL
+from configparser import ConfigParser
 import tmdbsimple as tmdb
 import random
 
 app = Flask(__name__)
+config_object = ConfigParser()
+config_object.read("config.ini")
+
 
 tmdb.API_KEY = "fe80472bacff902901720dcdaf98e60c" # sets up the API Key in the py API
 
@@ -32,7 +36,7 @@ movieRecommended3 = "temp"
 # set up the link with TMDB and the account
 auth = tmdb.Authentication()
 token = auth.token_new()
-auth.token_validate_with_login(request_token=token['request_token'],username='shuantown',password='Cse330Final')
+auth.token_validate_with_login(request_token=token['request_token'],username=config_object["user"],password=config_object["pass"])
 if auth.success:
     print("IT WORKED!")
     print(token['request_token'])
