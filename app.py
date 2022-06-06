@@ -10,8 +10,8 @@ app = Flask(__name__)
 config_object = ConfigParser()
 config_object.read("config.ini")
 
-
-tmdb.API_KEY = "fe80472bacff902901720dcdaf98e60c" # sets up the API Key in the py API
+tmdb.API_KEY = config_object["TMDB-LOGIN"]["APIkey"]
+# tmdb.API_KEY = "fe80472bacff902901720dcdaf98e60c" # sets up the API Key in the py API
 
 # log in to mysql account and db
 app.config['MYSQL_HOST'] = 'us-cdbr-east-05.cleardb.net'
