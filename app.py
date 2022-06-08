@@ -5,6 +5,7 @@ from flask_mysqldb import MySQL
 from configparser import ConfigParser
 import tmdbsimple as tmdb
 import random
+import os
 
 app = Flask(__name__)
 config_object = ConfigParser()
