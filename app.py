@@ -41,8 +41,7 @@ auth.token_validate_with_login(request_token=token['request_token'],username=con
 if auth.success:
     print("IT WORKED!")
     print(token['request_token'])
-    # session = auth.session_new(request_token=token['request_token']) # sets up the session
-    session = auth.session_new(token)
+    session = auth.session_new(request_token=token['request_token']) # sets up the session
     session_id = session['session_id']
     account = tmdb.Account(session_id) # sets up the account associated with the session
     account.info()
