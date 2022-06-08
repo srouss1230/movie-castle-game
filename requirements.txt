@@ -13,6 +13,7 @@ MarkupSafe==2.1.1
 mysqlclient==2.1.0
 requests==2.27.1
 sql==2022.4.0
+tmdb==0.0.0
 tmdbsimple==2.9.1
 urllib3==1.26.9
 Werkzeug==2.1.2
