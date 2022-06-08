@@ -203,4 +203,5 @@ def updateStats():
 
 # run the app
 # app.run(debug=True, port=3456, host='0.0.0.0')
-app.run(debug = True, port = 33507)
+port = int(os.getenv('PORT'))
+app.run(debug = True, port = port)
