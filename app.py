@@ -55,7 +55,7 @@ if auth.success:
         listSize = movieList.info()['item_count'] # this is the number of movies in the array
     except Exception as e:
         print(e)
-        pass
+        exit()
 else:
     print("¯\_(ツ)_/¯")
 mysql = MySQL(app)
