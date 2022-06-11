@@ -216,5 +216,5 @@ def test():
     return "test"
 # run the app
 # app.run(debug=True, port=3456, host='0.0.0.0')
-port = int(os.getenv('PORT'))
-app.run(debug = False, port=port)
+# port = int(os.getenv('PORT'))
+app.run(debug = False)
