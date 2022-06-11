@@ -202,7 +202,10 @@ def updateStats():
     results = executeQuery(f'''SELECT plays, wins, winsIn1, winsIn2, winsIn3, winsIn4, winsIn5, winsIn6 from users WHERE username = \'{username}\'''')
     return jsonify(plays=results[0], wins=results[1], winsIn1=results[2], winsIn2=results[3], winsIn3=results[4], winsIn4=results[5], winsIn5=results[6], winsIn6=results[7])
 
+@app.route('/test')
+def test():
+    return "test"
 # run the app
 # app.run(debug=True, port=3456, host='0.0.0.0')
-port = int(os.getenv('PORT'))
-app.run(debug = True, port = port)
+# port = int(os.getenv('PORT'))
+app.run(debug = False)
