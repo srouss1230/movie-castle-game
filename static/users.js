@@ -35,7 +35,7 @@ function shareResult(){
     
     let temp = document.createElement("textarea");
     document.body.appendChild(temp);
-    temp.value = document.getElementById("sharable_result").textContent + ". Play yourself at: http://ec2-54-173-71-44.compute-1.amazonaws.com:3456/";
+    temp.value = document.getElementById("sharable_result").textContent + ". Play yourself at: https://movie-castle.herokuapp.com/";
     temp.select();
     document.execCommand("copy");
     document.body.removeChild(temp);
