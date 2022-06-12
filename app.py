@@ -9,56 +9,60 @@ import os
 
 
 print("Start of app.py")
+
+
 app = Flask(__name__)
 config_object = ConfigParser()
 config_object.read("config.ini")
 
-tmdb.API_KEY = config_object["TMDB-LOGIN"]["APIkey"]
-# tmdb.API_KEY = "fe80472bacff902901720dcdaf98e60c" # sets up the API Key in the py API
 
-# log in to mysql account and db
-app.config['MYSQL_HOST'] = 'us-cdbr-east-05.cleardb.net'
-app.config['MYSQL_USER'] = 'b59a6005561b64'
-app.config['MYSQL_PASSWORD'] = '6cda5fdf'
-app.config['MYSQL_DB'] = 'heroku_0cdf3077be5e51c'
+def setup():
+    tmdb.API_KEY = config_object["TMDB-LOGIN"]["APIkey"]
+    # tmdb.API_KEY = "fe80472bacff902901720dcdaf98e60c" # sets up the API Key in the py API
 
-# set up all global vars
-actor1 = "temp"
-actor2 = "temp"
-actor3 = "temp"
-actor4 = "temp"
-actor5 = "temp"
-director = "temp"
-movieTitle = "temp"
-movieDesc = "temp"
-posterPath = "temp"
-movieRecommended1 = "temp"
-movieRecommended2 = "temp"
-movieRecommended3 = "temp"
+    # log in to mysql account and db
+    app.config['MYSQL_HOST'] = 'us-cdbr-east-05.cleardb.net'
+    app.config['MYSQL_USER'] = 'b59a6005561b64'
+    app.config['MYSQL_PASSWORD'] = '6cda5fdf'
+    app.config['MYSQL_DB'] = 'heroku_0cdf3077be5e51c'
 
-def setUpTMDB():
-    # set up the link with TMDB and the account
-    auth = tmdb.Authentication()
-    token = auth.token_new()
-    print(token["expires_at"])
-    auth.token_validate_with_login(request_token=token['request_token'],username=config_object["TMDB-LOGIN"]["user"],password=config_object["TMDB-LOGIN"]["pass"])
-    if auth.success:
-        try:
-            print("IT WORKED!")
-            print(token['request_token'])
-            session = auth.session_new(request_token=token['request_token']) # sets up the session
-            session_id = session['session_id']
-            account = tmdb.Account(session_id) # sets up the account associated with the session
-            account.info()
-            list_id = account.lists()['results'][0]['id']
-            movieList = tmdb.Lists(list_id, session_id) # retuns the TMDB list object
-            movieArr = movieList.info()['items'] # this is the array of the movies which is returned by Get Details in API
-            listSize = movieList.info()['item_count'] # this is the number of movies in the array
-        except Exception as e:
-            print(e)
-            pass
-    else:
-        print("¯\_(ツ)_/¯")
+    # set up all global vars
+    actor1 = "temp"
+    actor2 = "temp"
+    actor3 = "temp"
+    actor4 = "temp"
+    actor5 = "temp"
+    director = "temp"
+    movieTitle = "temp"
+    movieDesc = "temp"
+    posterPath = "temp"
+    movieRecommended1 = "temp"
+    movieRecommended2 = "temp"
+    movieRecommended3 = "temp"
+
+    def setUpTMDB():
+        # set up the link with TMDB and the account
+        auth = tmdb.Authentication()
+        token = auth.token_new()
+        print(token["expires_at"])
+        auth.token_validate_with_login(request_token=token['request_token'],username=config_object["TMDB-LOGIN"]["user"],password=config_object["TMDB-LOGIN"]["pass"])
+        if auth.success:
+            try:
+                print("IT WORKED!")
+                print(token['request_token'])
+                session = auth.session_new(request_token=token['request_token']) # sets up the session
+                session_id = session['session_id']
+                account = tmdb.Account(session_id) # sets up the account associated with the session
+                account.info()
+                list_id = account.lists()['results'][0]['id']
+                movieList = tmdb.Lists(list_id, session_id) # retuns the TMDB list object
+                movieArr = movieList.info()['items'] # this is the array of the movies which is returned by Get Details in API
+                listSize = movieList.info()['item_count'] # this is the number of movies in the array
+            except Exception as e:
+                print(e)
+                pass
+        else:
+            print("¯\_(ツ)_/¯")
 
 
 mysql = MySQL(app)
