@@ -75,3 +75,5 @@ function logOut() {
     $( "#log_out_btn" ).attr("hidden", true);
 
 }
+
+

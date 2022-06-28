@@ -42,7 +42,7 @@ function winGame() {
     for(let i = 2; i <= 6; i++) {
         revealHint(i);
     }
-
+    updateStatsInLS();
     $( "#guess_input" ).attr("hidden", true);
     $( "#search_btn" ).attr("hidden", true);
     $( "#end_screen" ).attr("hidden", false);
@@ -92,6 +92,37 @@ function updateTimer() {
 
 }
 
+function updateStatsInLS(){
+    if(guessNum == 1)
+    {
+        incWinsIn1();
+    }
+    else if (guessNum==2)
+    {
+        incWinsIn2();
+    }
+    else if (guessNum==3)
+    {
+        incWinsIn3();
+    }
+    else if (guessNum==4)
+    {
+        incWinsIn4();
+    }
+    else if (guessNum==5)
+    {
+        incWinsIn5();
+    }
+    else if (guessNum==6)
+    {
+        incWinsIn6();
+    }
+    else
+    {
+        alert("ERROR: No guessNum");
+    }
+}
+
 function updateStats(gameWon) {
 
     // update the user stats if user is set
@@ -135,3 +166,136 @@ function hideTMDBDetails(){
     $( "#openTMDBDetails" ).attr("hidden", false);
 }
 //penm,
+
+function getWinsIn1(){
+    return (Window.localStorage.getItem("winsIn1StorageStat"));
+
+}
+function incWinsIn1(){
+    let winsIn1 = getWinsIn1();
+    if (winsIn1 != null)
+    {
+           alert("old val: " + winsIn1);
+            window.localStorage.setItem("winsIn1StorageStat",++winsIn1);
+            alert("new val: " + winsIn1);
+    }
+    else
+    {
+        alert("wins in 1 was null. Initializing to one.")
+        Window.localStorage.setItem("winsIn1StorageStat", 1);
+    }
+}
+function getWinsIn2(){
+    return (Window.localStorage.getItem("winsIn2StorageStat"));
+
+}
+function incWinsIn2(){
+    let winsIn2 = getWinsIn2();
+    if (winsIn2 != null)
+    {
+           alert("old val: " + winsIn2);
+            window.localStorage.setItem("winsIn2StorageStat",++winsIn2);
+            alert("new val: " + winsIn2);
+    }
+    else
+    {
+        alert("wins in 2 was null. Initializing to one.")
+        Window.localStorage.setItem("winsInwStorageStat", 1);
+    }
+}
+function getWinsIn3(){
+    return (Window.localStorage.getItem("winsIn3StorageStat"));
+
+}
+function incWinsIn3(){
+    let winsIn3 = getWinsIn3();
+    if (winsIn3 != null)
+    {
+           alert("old val: " + winsIn3);
+            window.localStorage.setItem("winsIn3StorageStat",++winsIn3);
+            alert("new val: " + winsIn3);
+    }
+    else
+    {
+        alert("wins in 3 was null. Initializing to one.")
+        Window.localStorage.setItem("winsIn3StorageStat", 1);
+    }
+}
+function getWinsIn4(){
+    return (Window.localStorage.getItem("winsIn4StorageStat"));
+
+}
+function incWinsIn4(){
+    let winsIn4 = getWinsIn4();
+    if (winsIn4 != null)
+    {
+           alert("old val: " + winsIn4);
+            window.localStorage.setItem("winsIn4StorageStat",++winsIn4);
+            alert("new val: " + winsIn4);
+    }
+    else
+    {
+        alert("wins in 4 was null. Initializing to one.")
+        Window.localStorage.setItem("winsIn4StorageStat", 1);
+    }
+}
+function getWinsIn5(){
+    return (Window.localStorage.getItem("winsIn5StorageStat"));
+
+}
+function incWinsIn5(){
+    let winsIn5 = getWinsIn5();
+    if (winsIn5 != null)
+    {
+           alert("old val: " + winsIn5);
+            window.localStorage.setItem("winsIn5StorageStat",++winsIn1);
+            alert("new val: " + winsIn5);
+    }
+    else
+    {
+        alert("wins in 5 was null. Initializing to one.")
+        Window.localStorage.setItem("winsIn15StorageStat", 1);
+    }
+}
+function getWinsIn6(){
+    return (Window.localStorage.getItem("winsIn6StorageStat"));
+
+}
+function incWinsIn6(){
+    let winsIn6 = getWinsIn6();
+    if (winsIn6 != null)
+    {
+           alert("old val: " + winsIn6);
+            window.localStorage.setItem("winsIn6StorageStat",++winsIn6);
+            alert("new val: " + winsIn1);
+    }
+    else
+    {
+        alert("wins in 6 was null. Initializing to one.")
+        Window.localStorage.setItem("winsIn6StorageStat", 1);
+    }
+}
+alertWinsIn1 = function()
+{
+    alert("wins in 1: " + getWinsIn1());
+}
+alertWinsIn2 = function()
+{
+    alert("wins in 2: " + getWinsIn2());
+}
+alertWinsIn3 = function()
+{
+    alert("wins in 3: " + getWinsIn3());
+}
+alertWinsIn4 = function()
+{
+    alert("wins in 4: " + getWinsIn4());
+}
+alertWinsIn5 = function()
+{
+    alert("wins in 5: " + getWinsIn5());
+}
+alertWinsIn6 = function()
+{
+    alert("wins in 6: " + getWinsIn6());
+}
