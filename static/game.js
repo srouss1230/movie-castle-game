@@ -168,7 +168,11 @@ function hideTMDBDetails(){
 //penm,
 
 function getWinsIn1(){
-    if(Window.localStorage.getItem("winsIn1StorageStat")==null)
+    try
+    {
+        let test = Window.localStorage.getItem("winsIn1StorageStat");
+    }
+    catch(err)
     {
         alert("wins in 1 was null. Initializing to one.")
         Window.localStorage.setItem("winsIn1StorageStat", 1);
