@@ -170,16 +170,16 @@ function hideTMDBDetails(){
 function getWinsIn1(){
     try
     {
-        let test = Window.localStorage.getItem('winsIn1StorageStat');
+        let test = window.localStorage.getItem('winsIn1StorageStat');
     }
     catch(err)
     {
         alert("wins in 1 was null. Initializing to one.");
         let name = "winsIn1StorageStat";
         let val = 1;
-        Window.localStorage.setItem(name, val);
+        window.localStorage.setItem(name, val);
     }
-    let winsIn1 = Window.localStorage.getItem('winsIn1StorageStat');
+    let winsIn1 = window.localStorage.getItem('winsIn1StorageStat');
     return winsIn1;
 
 }
