@@ -175,7 +175,9 @@ function getWinsIn1(){
     catch(err)
     {
         alert("wins in 1 was null. Initializing to one.");
-        Window.localStorage.setItem('winsIn1StorageStat', 1);
+        let name = "winsIn1StorageStat";
+        let val = 1;
+        Window.localStorage.setItem(name, val);
     }
     let winsIn1 = Window.localStorage.getItem('winsIn1StorageStat');
     return winsIn1;
