@@ -168,22 +168,22 @@ function hideTMDBDetails(){
 //penm,
 
 function getWinsIn1(){
-    return (Window.localStorage.getItem("winsIn1StorageStat"));
+    let winsIn1 = Window.localStorage.getItem("winsIn1StorageStat");
+    if(winsIn1==null)
+    {
+        alert("wins in 1 was null. Initializing to one.")
+        Window.localStorage.setItem("winsIn1StorageStat", 1);
+        winsIn1 = Window.localStorage.getItem("winsIn1StorageStat")
+    }
+    return winsIn1;
 
 }
 function incWinsIn1(){
     let winsIn1 = getWinsIn1();
     if (winsIn1 != null)
-    {
-           alert("old val: " + winsIn1);
-            window.localStorage.setItem("winsIn1StorageStat",++winsIn1);
-            alert("new val: " + winsIn1);
-    }
-    else
-    {
-        alert("wins in 1 was null. Initializing to one.")
-        Window.localStorage.setItem("winsIn1StorageStat", 1);
-    }
+    alert("old val: " + winsIn1);
+    window.localStorage.setItem("winsIn1StorageStat",++winsIn1);
+    alert("new val: " + winsIn1);  
 }
 function getWinsIn2(){
     return (Window.localStorage.getItem("winsIn2StorageStat"));
