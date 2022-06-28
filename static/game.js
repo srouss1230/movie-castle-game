@@ -168,13 +168,12 @@ function hideTMDBDetails(){
 //penm,
 
 function getWinsIn1(){
-    let winsIn1 = Window.localStorage.getItem("winsIn1StorageStat");
-    if(winsIn1==null)
+    if(Window.localStorage.getItem("winsIn1StorageStat")==null)
     {
         alert("wins in 1 was null. Initializing to one.")
         Window.localStorage.setItem("winsIn1StorageStat", 1);
-        winsIn1 = Window.localStorage.getItem("winsIn1StorageStat")
     }
+    let winsIn1 = Window.localStorage.getItem("winsIn1StorageStat")
     return winsIn1;
 
 }
