@@ -307,3 +307,27 @@ function incWinsIn6(){
     window.localStorage.setItem("winsIn1StorageStat",++winsIn6);
     alert("new val: " + winsIn6);  
 }
+alertWinsIn1= function()
+{
+    alert("wins in 1: " + getWinsIn1());
+}
+alertWinsIn2 = function()
+{
+    alert("wins in 2: " + getWinsIn2());
+}
+alertWinsIn3 = function()
+{
+    alert("wins in 3: " + getWinsIn3());
+}
+alertWinsIn4 = function()
+{
+    alert("wins in 4: " + getWinsIn4());
+}
+alertWinsIn5 = function()
+{
+    alert("wins in 5: " + getWinsIn5());
+}
+alertWinsIn6 = function()
+{
+    alert("wins in 6: " + getWinsIn6());
+}

@@ -15,36 +15,8 @@
         guessNum = 1;
         loggedInUser = null;
        
-        alertWinsIn1= function()
-        {
-            alert("wins in 1: " + getWinsIn1());
-        }
-        alertWinsIn2 = function()
-        {
-            alert("wins in 2: " + getWinsIn2());
-        }
-        alertWinsIn3 = function()
-        {
-            alert("wins in 3: " + getWinsIn3());
-        }
-        alertWinsIn4 = function()
-        {
-            alert("wins in 4: " + getWinsIn4());
-        }
-        alertWinsIn5 = function()
-        {
-            alert("wins in 5: " + getWinsIn5());
-        }
-        alertWinsIn6 = function()
-        {
-            alert("wins in 6: " + getWinsIn6());
-        }
-        $("#winsIn1Btn").click(alertWinsIn1);
-        $("#winsIn2Btn").click(alertWinsIn2);
-        $("#winsIn3Btn").click(alertWinsIn3);
-        $("#winsIn4Btn").click(alertWinsIn4);
-        $("#winsIn5Btn").click(alertWinsIn5);
-        $("#winsIn6Btn").click(alertWinsIn6);
+        
+        
     </script>
 
     <script src="../static/game.js"></script>
@@ -239,6 +211,12 @@
         $("#log_out_btn").click(logOut);
         $("#share_btn").click(shareResult);
         setInterval(updateTimer, 100);
+        $("#winsIn1Btn").click(alertWinsIn1);
+        $("#winsIn2Btn").click(alertWinsIn2);
+        $("#winsIn3Btn").click(alertWinsIn3);
+        $("#winsIn4Btn").click(alertWinsIn4);
+        $("#winsIn5Btn").click(alertWinsIn5);
+        $("#winsIn6Btn").click(alertWinsIn6);
         
 
     </script>
