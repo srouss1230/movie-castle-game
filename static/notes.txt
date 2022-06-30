@@ -1,0 +1,4 @@
+local storage things to fix:
+1) Make the get and set functions look like the wins in 1 ones.
+2) Make the site remember if a user has played that day's game.
+3) 
