@@ -46,6 +46,7 @@ movieRecommended1 = "temp"
 movieRecommended2 = "temp"
 movieRecommended3 = "temp"
 listSize = 0
+movieArr = []
 
 # set up the link with TMDB and the account
 auth = tmdb.Authentication()
@@ -172,6 +173,7 @@ def findMovie():
 # run at the start, finds today's movie then passes through all necessary info
 @app.route('/')
 def home():
+
     findMovie()
     return render_template('castle.html', title='Cast.le', actor1=actor1, actor2=actor2, actor3=actor3, actor4=actor4, actor5=actor5, director=director, movieTitle=movieTitle,movieDesc=movieDesc, posterPath=posterPath, movieRecommended1=movieRecommended1, movieRecommended2=movieRecommended2, movieRecommended3=movieRecommended3)
 
