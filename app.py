@@ -64,10 +64,10 @@ try:
     session = auth.session_new(request_token=token['request_token']) # sets up the session
     session_id = session['session_id']
     account = tmdb.Account(session_id) # sets up the account associated with the session
-    account.info()
+    print(account.info())
     list_id = account.lists()['results'][0]['id']
     movieList = tmdb.Lists(list_id, session_id) # retuns the TMDB list object
-    print(movieList.info())
+    # print(movieList.info())
     movieArr = movieList.info()['items'] # this is the array of the movies which is returned by Get Details in API
     listSize = movieList.info()['item_count'] # this is the number of movies in the array
 except Exception as e:
