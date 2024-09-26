@@ -64,19 +64,11 @@ try:
     session = auth.session_new(request_token=token['request_token']) # sets up the session
     session_id = session['session_id']
     account = tmdb.Account(session_id) # sets up the account associated with the session
-    print(f"Account: {account}")
-    print("made it here 1")
     account.info()
-    print("made it here 2")
     list_id = account.lists()['results'][1]['id']
-    print("made it here 3")
     movieList = tmdb.Lists(list_id, session_id) # retuns the TMDB list object
-    print("made it here 4")
-    # print(movieList.info())
     movieArr = movieList.info()['items'] # this is the array of the movies which is returned by Get Details in API
-    print("made it here 5")
     listSize = movieList.info()['item_count'] # this is the number of movies in the array
-    print("made it here 6")
 except Exception as e:
     print(e)
     print("FUCK IT DIDN'T WORK")
@@ -121,8 +113,8 @@ def findMovie():
     # if nothing was returned, pull from TMDB
     if row == None:
 
-        # todayMovieIndex = random.randint(0, listSize-1)
-        todayMovieIndex = 4
+        todayMovieIndex = random.randint(0, listSize-1)
+        # todayMovieIndex = 4
         movieID = movieArr[todayMovieIndex]['id']
         todaysMovie = tmdb.Movies(movieID)
         todaysMovieInfo = todaysMovie.info()
