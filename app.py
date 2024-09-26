@@ -45,6 +45,7 @@ posterPath = "temp"
 movieRecommended1 = "temp"
 movieRecommended2 = "temp"
 movieRecommended3 = "temp"
+listSize = 0
 
 # set up the link with TMDB and the account
 auth = tmdb.Authentication()
@@ -65,6 +66,7 @@ if auth.success:
         listSize = movieList.info()['item_count'] # this is the number of movies in the array
     except Exception as e:
         print(e)
+        print("FUCK IT DIDN'T WORK")
         pass
 else:
     print("¯\_(ツ)_/¯")
