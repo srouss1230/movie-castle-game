@@ -20,10 +20,17 @@ tmdb.API_KEY = config_object["TMDB-LOGIN"]["APIkey"]
 # tmdb.API_KEY = "fe80472bacff902901720dcdaf98e60c" # sets up the API Key in the py API
 
 # log in to mysql account and db
-app.config['MYSQL_HOST'] = 'us-cdbr-east-05.cleardb.net'
-app.config['MYSQL_USER'] = 'b59a6005561b64'
-app.config['MYSQL_PASSWORD'] = '6cda5fdf'
-app.config['MYSQL_DB'] = 'heroku_0cdf3077be5e51c'
+# app.config['MYSQL_HOST'] = 'us-cdbr-east-05.cleardb.net'
+# app.config['MYSQL_USER'] = 'b59a6005561b64'
+# app.config['MYSQL_PASSWORD'] = '6cda5fdf'
+# app.config['MYSQL_DB'] = 'heroku_0cdf3077be5e51c'
+
+app.config['MYSQL_HOST'] = 'wiad5ra41q8129zn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_USER'] = 'pekj2na67cxiside'
+app.config['MYSQL_PASSWORD'] = 'p5ivp45zjhljkmyw'
+app.config['MYSQL_DB'] = 'r84c7iat5psdybvj'
+app.config['MYSQL_PORT'] = 3306
+
 
 # set up all global vars
 actor1 = "temp"
