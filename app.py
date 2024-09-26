@@ -68,7 +68,7 @@ try:
     print("made it here 1")
     account.info()
     print("made it here 2")
-    list_id = account.lists()['results'][0]['id']
+    list_id = account.lists()['results'][1]['id']
     print("made it here 3")
     movieList = tmdb.Lists(list_id, session_id) # retuns the TMDB list object
     print("made it here 4")
