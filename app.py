@@ -64,6 +64,7 @@ try:
     session = auth.session_new(request_token=token['request_token']) # sets up the session
     session_id = session['session_id']
     account = tmdb.Account(session_id) # sets up the account associated with the session
+    print("Account: {account}")
     print("made it here 1")
     account.info()
     print("made it here 2")
