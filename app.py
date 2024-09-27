@@ -113,7 +113,8 @@ def findMovie():
     # if nothing was returned, pull from TMDB
     if row == None:
 
-        todayMovieIndex = random.randint(0, listSize-1)
+        # todayMovieIndex = random.randint(0, listSize-1)
+        todayMovieIndex = random.randrange(0, listSize)
         # todayMovieIndex = 4
         movieID = movieArr[todayMovieIndex]['id']
         todaysMovie = tmdb.Movies(movieID)
