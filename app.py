@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, jsonify
 from datetime import datetime
 from flask_mysqldb import MySQL
 from configparser import ConfigParser
-import tmdbsimple as tmdb
+import tmdbsimple as tmdb # don't forget that we are using a tmdb python wrapper
 import random
 import os
 
@@ -46,7 +46,7 @@ movieRecommended1 = "temp"
 movieRecommended2 = "temp"
 movieRecommended3 = "temp"
 listSize = 0
-movieArr = []
+movieArr = {}
 
 # set up the link with TMDB and the account
 auth = tmdb.Authentication()
@@ -71,7 +71,7 @@ try:
     listSize = movieList.info()['item_count'] # this is the number of movies in the array
 except Exception as e:
     print(e)
-    print("FUCK IT DIDN'T WORK")
+    print("IT DIDN'T WORK")
     pass
 
 
@@ -117,6 +117,7 @@ def findMovie():
         todayMovieIndex = random.randrange(0, listSize)
         print(f'listSize: {listSize}')
         print(f'todayMovieIndex: {todayMovieIndex}')
+        print(f'movieArr: {movieArr}')
         movieID = movieArr[todayMovieIndex]['id']
         todaysMovie = tmdb.Movies(movieID)
         todaysMovieInfo = todaysMovie.info()
