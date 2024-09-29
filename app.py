@@ -45,8 +45,8 @@ posterPath = "temp"
 movieRecommended1 = "temp"
 movieRecommended2 = "temp"
 movieRecommended3 = "temp"
-# listSize = 0
-# movieArr = []
+listSize = 0
+movieArr = []
 
 # set up the link with TMDB and the account
 auth = tmdb.Authentication()
