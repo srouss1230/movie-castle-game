@@ -45,8 +45,8 @@ posterPath = "temp"
 movieRecommended1 = "temp"
 movieRecommended2 = "temp"
 movieRecommended3 = "temp"
-listSize = 0
-movieArr = {}
+# listSize = 0
+# movieArr = {}
 
 # set up the link with TMDB and the account
 auth = tmdb.Authentication()
@@ -58,21 +58,21 @@ if auth.success:
 else:
     print("¯\_(ツ)_/¯")
 
-try:
-    print("IT WORKED!")
-    print(token['request_token'])
-    session = auth.session_new(request_token=token['request_token']) # sets up the session
-    session_id = session['session_id']
-    account = tmdb.Account(session_id) # sets up the account associated with the session
-    account.info()
-    list_id = account.lists()['results'][1]['id']
-    movieList = tmdb.Lists(list_id, session_id) # retuns the TMDB list object
-    movieArr = movieList.info()['items'] # this is the array of the movies which is returned by Get Details in API
-    listSize = movieList.info()['item_count'] # this is the number of movies in the array
-except Exception as e:
-    print(e)
-    print("IT DIDN'T WORK")
-    pass
+# try:
+print("IT WORKED!")
+print(token['request_token'])
+session = auth.session_new(request_token=token['request_token']) # sets up the session
+session_id = session['session_id']
+account = tmdb.Account(session_id) # sets up the account associated with the session
+account.info()
+list_id = account.lists()['results'][1]['id']
+movieList = tmdb.Lists(list_id, session_id) # retuns the TMDB list object
+movieArr = movieList.info()['items'] # this is the array of the movies which is returned by Get Details in API
+listSize = movieList.info()['item_count'] # this is the number of movies in the array
+# except Exception as e:
+#     print(e)
+#     print("IT DIDN'T WORK")
+#     pass
 
 
 mysql = MySQL(app)
