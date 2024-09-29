@@ -45,8 +45,8 @@ posterPath = "temp"
 movieRecommended1 = "temp"
 movieRecommended2 = "temp"
 movieRecommended3 = "temp"
-listSize = 0
-movieArr = []
+# listSize = 0
+# movieArr = []
 
 # set up the link with TMDB and the account
 auth = tmdb.Authentication()
@@ -115,7 +115,8 @@ def findMovie():
 
         # todayMovieIndex = random.randint(0, listSize-1)
         todayMovieIndex = random.randrange(0, listSize)
-        # todayMovieIndex = 4
+        print(f'listSize: {listSize}')
+        print(f'todayMovieIndex: {todayMovieIndex}')
         movieID = movieArr[todayMovieIndex]['id']
         todaysMovie = tmdb.Movies(movieID)
         todaysMovieInfo = todaysMovie.info()
