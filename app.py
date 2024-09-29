@@ -118,7 +118,8 @@ def findMovie():
         print(f'listSize: {listSize}')
         print(f'todayMovieIndex: {todayMovieIndex}')
         print(f'movieArr: {movieArr}')
-        movieID = movieArr[todayMovieIndex]['id']
+        movie = movieArr[todayMovieIndex]
+        movieID = movie['id']
         todaysMovie = tmdb.Movies(movieID)
         todaysMovieInfo = todaysMovie.info()
         movieTitle = todaysMovieInfo['original_title']
