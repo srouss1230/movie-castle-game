@@ -73,6 +73,15 @@ def setUpTmdb():
         movieList = tmdb.Lists(list_id, session_id) # retuns the TMDB list object
         movieArr = movieList.info()['items'] # this is the array of the movies which is returned by Get Details in API
         listSize = movieList.info()['item_count'] # this is the number of movies in the array
+        print("*******************************************")
+        print("*******************************************")
+        print("*******************************************")
+        print("*******************************************")
+        print("List size is " + str(listSize))
+        print("*******************************************")
+        print("*******************************************")
+        print("*******************************************")
+        print("*******************************************")
     except Exception as e:
         print(e)
         print("IT DIDN'T WORK")
@@ -119,8 +128,8 @@ def findMovie():
     # if nothing was returned, pull from TMDB
     if row == None:
 
-        todayMovieIndex = random.randint(0, listSize-1)
-        # todayMovieIndex = random.randrange(0, listSize)
+        # todayMovieIndex = random.randint(0, listSize-1)
+        todayMovieIndex = random.randrange(0, listSize)
         print(f'listSize: {listSize}')
         print(f'todayMovieIndex: {todayMovieIndex}')
         print(f'movieArr: {movieArr}')
