@@ -68,7 +68,8 @@ def setUpTmdb():
         session_id = session['session_id']
         account = tmdb.Account(session_id) # sets up the account associated with the session
         account.info()
-        list_id = account.lists()['results'][1]['id']
+        # list_id = account.lists()['results'][1]['id']
+        list_id = 8199681
         movieList = tmdb.Lists(list_id, session_id) # retuns the TMDB list object
         movieArr = movieList.info()['items'] # this is the array of the movies which is returned by Get Details in API
         listSize = movieList.info()['item_count'] # this is the number of movies in the array
