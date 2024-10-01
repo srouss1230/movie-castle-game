@@ -135,10 +135,11 @@ def findMovie():
     if row == None:
         # todayMovieIndex = random.randint(0, listSize-1)
         todayMovieIndex = random.randrange(0, listSize)
+        datetime.
         listPage = todayMovieIndex // 20
         listIndex = todayMovieIndex % 20
         movieList = tmdb.Lists(list_id, session_id)
-        movieArr = movieList._GET(f'/3/list/{list_id}?page={listPage+1}')['items']
+        movieArr = movieList._GET(f'list/{list_id}?page={listPage+1}')['items']
         print(f'listSize: {listSize}')
         print(f'todayMovieIndex: {todayMovieIndex}')
         print(f'movieArr: {movieArr}')
