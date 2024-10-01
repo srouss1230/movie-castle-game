@@ -119,7 +119,7 @@ function updateStatsInLS(){
     }
     else
     {
-        alert("ERROR: No guessNum");
+        // alert("ERROR: No guessNum");
     }
 }
 
@@ -174,7 +174,7 @@ function getWinsIn1(){
     }
     catch(err)
     {
-        alert("wins in 1 was null. Initializing to one.");
+        // alert("wins in 1 was null. Initializing to one.");
         let name = "winsIn1StorageStat";
         let val = 1;
         window.localStorage.setItem(name, val);
@@ -186,9 +186,9 @@ function getWinsIn1(){
 function incWinsIn1(){
     let winsIn1 = getWinsIn1();
     if (winsIn1 != null)
-    alert("old val: " + winsIn1);
+    // alert("old val: " + winsIn1);
     window.localStorage.setItem("winsIn1StorageStat",++winsIn1);
-    alert("new val: " + winsIn1);  
+    // alert("new val: " + winsIn1);  
 }
 
 function getWinsIn2(){
@@ -198,7 +198,7 @@ function getWinsIn2(){
     }
     catch(err)
     {
-        alert("wins in 2 was null. Initializing to one.");
+        // alert("wins in 2 was null. Initializing to one.");
         let name = "winsIn2StorageStat";
         let val = 1;
         window.localStorage.setItem(name, val);
@@ -210,9 +210,9 @@ function getWinsIn2(){
 function incWinsIn2(){
     let winsIn2 = getWinsIn2();
     if (winsIn2 != null)
-    alert("old val: " + winsIn2);
+    // alert("old val: " + winsIn2);
     window.localStorage.setItem("winsIn1StorageStat",++winsIn2);
-    alert("new val: " + winsIn2);  
+    // alert("new val: " + winsIn2);  
 }
 
 function getWinsIn3(){
@@ -222,7 +222,7 @@ function getWinsIn3(){
     }
     catch(err)
     {
-        alert("wins in 3 was null. Initializing to one.");
+        // alert("wins in 3 was null. Initializing to one.");
         let name = "winsIn3StorageStat";
         let val = 1;
         window.localStorage.setItem(name, val);
@@ -234,9 +234,9 @@ function getWinsIn3(){
 function incWinsIn3(){
     let winsIn3 = getWinsIn3();
     if (winsIn3 != null)
-    alert("old val: " + winsIn3);
+    // alert("old val: " + winsIn3);
     window.localStorage.setItem("winsIn3StorageStat",++winsIn3);
-    alert("new val: " + winsIn3);  
+    // alert("new val: " + winsIn3);  
 }
 function getWinsIn4(){
     try
@@ -245,7 +245,7 @@ function getWinsIn4(){
     }
     catch(err)
     {
-        alert("wins in 4 was null. Initializing to one.");
+        // alert("wins in 4 was null. Initializing to one.");
         let name = "winsIn4StorageStat";
         let val = 1;
         window.localStorage.setItem(name, val);
@@ -257,9 +257,9 @@ function getWinsIn4(){
 function incWinsIn4(){
     let winsIn4 = getWinsIn4();
     if (winsIn4 != null)
-    alert("old val: " + winsIn4);
+    // alert("old val: " + winsIn4);
     window.localStorage.setItem("winsIn4StorageStat",++winsIn4);
-    alert("new val: " + winsIn4);  
+    // alert("new val: " + winsIn4);  
 }
 function getWinsIn5(){
     try
@@ -268,7 +268,7 @@ function getWinsIn5(){
     }
     catch(err)
     {
-        alert("wins in 5 was null. Initializing to one.");
+        // alert("wins in 5 was null. Initializing to one.");
         let name = "winsIn5StorageStat";
         let val = 1;
         window.localStorage.setItem(name, val);
@@ -280,9 +280,9 @@ function getWinsIn5(){
 function incWinsIn5(){
     let winsIn5 = getWinsIn5();
     if (winsIn5 != null)
-    alert("old val: " + winsIn5);
+    // alert("old val: " + winsIn5);
     window.localStorage.setItem("winsIn5StorageStat",++winsIn5);
-    alert("new val: " + winsIn5);  
+    // alert("new val: " + winsIn5);  
 }
 function getWinsIn6(){
     try
@@ -291,7 +291,7 @@ function getWinsIn6(){
     }
     catch(err)
     {
-        alert("wins in 6 was null. Initializing to one.");
+        // alert("wins in 6 was null. Initializing to one.");
         let name = "winsIn6StorageStat";
         let val = 1;
         window.localStorage.setItem(name, val);
@@ -303,9 +303,9 @@ function getWinsIn6(){
 function incWinsIn6(){
     let winsIn6 = getWinsIn6();
     if (winsIn6 != null)
-    alert("old val: " + winsIn6);
+    // alert("old val: " + winsIn6);
     window.localStorage.setItem("winsIn1StorageStat",++winsIn6);
-    alert("new val: " + winsIn6);  
+    // alert("new val: " + winsIn6);  
 }
 alertWinsIn1= function()
 {
