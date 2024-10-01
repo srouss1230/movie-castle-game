@@ -236,7 +236,7 @@ p {
 #TMDBLogo {
     width: 200px;
     margin-top: 10px;
-    margin-left: 190px;
+    /* margin-left: 190px; */
 }
 
 #moviePoster {
