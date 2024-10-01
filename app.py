@@ -47,10 +47,14 @@ movieRecommended2 = "temp"
 movieRecommended3 = "temp"
 listSize = 0
 movieArr = {}
+session_id = 0
+list_id = 0
 
 def setUpTmdb():
     global listSize
     global movieArr
+    global session_id
+    global list_id
     # set up the link with TMDB and the account
     auth = tmdb.Authentication()
     token = auth.token_new()
@@ -68,6 +72,8 @@ def setUpTmdb():
         session_id = session['session_id']
         account = tmdb.Account(session_id) # sets up the account associated with the session
         account.info()
+
+        # to avoid the hardcoding you should look into just calling account.lists first and you can look at the code for that function to see what it does in this API
         list_id = account.lists()['results'][1]['id']
         # list_id = 8199681
         movieList = tmdb.Lists(list_id, session_id) # retuns the TMDB list object
@@ -127,13 +133,16 @@ def findMovie():
 
     # if nothing was returned, pull from TMDB
     if row == None:
-
         # todayMovieIndex = random.randint(0, listSize-1)
         todayMovieIndex = random.randrange(0, listSize)
+        listPage = todayMovieIndex // 20
+        listIndex = todayMovieIndex % 20
+        movieList = tmdb.Lists(list_id, session_id)
+        movieArr = movieList._GET(f'/3/list/{list_id}?page={listPage+1}')['items']
         print(f'listSize: {listSize}')
         print(f'todayMovieIndex: {todayMovieIndex}')
         print(f'movieArr: {movieArr}')
-        movie = movieArr[todayMovieIndex]
+        movie = movieArr[listIndex]
         movieID = movie['id']
         todaysMovie = tmdb.Movies(movieID)
         todaysMovieInfo = todaysMovie.info()
