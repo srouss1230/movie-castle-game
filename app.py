@@ -135,7 +135,7 @@ def findMovie():
     if row == None:
         # todayMovieIndex = random.randint(0, listSize-1)
         todayMovieIndex = random.randrange(0, listSize)
-        datetime.
+        # datetime.
         listPage = todayMovieIndex // 20
         listIndex = todayMovieIndex % 20
         movieList = tmdb.Lists(list_id, session_id)
