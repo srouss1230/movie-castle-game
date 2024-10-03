@@ -84,7 +84,8 @@ def setUpTmdb():
         # print("IT DIDN'T WORK")
         pass
 
-setUpTmdb()
+
+# setUpTmdb()
 
 
 mysql = MySQL(app)
@@ -124,9 +125,8 @@ def findMovie():
 
     # if nothing was returned, pull from TMDB
     if row == None:
-        # todayMovieIndex = random.randint(0, listSize-1)
+        setUpTmdb()
         todayMovieIndex = random.randrange(0, listSize)
-        # datetime.
         listPage = todayMovieIndex // 20
         listIndex = todayMovieIndex % 20
         movieList = tmdb.Lists(list_id, session_id)
@@ -250,6 +250,8 @@ def updateStats():
 @app.route('/test')
 def test():
     return "test"
+
+
 # run the app
 # app.run(debug=True, port=3456, host='0.0.0.0')
 port = int(os.getenv('PORT', 5000))
