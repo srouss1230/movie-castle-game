@@ -122,7 +122,7 @@ def findMovie():
     # selects the movie data from SQL for today's date
     row = executeQuery(f'''SELECT actor1, actor2, actor3, actor4, actor5, director, title, movieDesc, posterPath, movieRecommended1, movieRecommended2, movieRecommended3
                     from movies WHERE date=\'{today}\'''')
-
+    
     # if nothing was returned, pull from TMDB
     if row == None:
         setUpTmdb()
@@ -138,16 +138,6 @@ def findMovie():
         movieID = movie['id']
         todaysMovie = tmdb.Movies(movieID)
         todaysMovieInfo = todaysMovie.info()
-        print('******************************')
-        print('******************************')
-        print(todaysMovie)
-        print('******************************')
-        print('******************************')
-        print('******************************')
-        print('******************************')
-        print(todaysMovieInfo)
-        print('******************************')
-        print('******************************')
         movieTitle = todaysMovieInfo['original_title']
         credits = todaysMovie.credits()
         
@@ -165,15 +155,23 @@ def findMovie():
         actor4 = credits['cast'][1]['name']
         actor5 = credits['cast'][0]['name']
 
-       
+       # these grab the ids for the actors
+        actor1ID = credits['cast'][2]['id']
+        actor2ID = credits['cast'][3]['id']
+        actor3ID = credits['cast'][4]['id']
+        actor4ID = credits['cast'][1]['id']
+        actor5ID = credits['cast'][0]['id']
+
+        #theoretically the images should be  https://api.themoviedb.org/3/person/{person_id}/images[profiles][0][file_path]
 
         directorFound = False
         i = 0
         while not directorFound:
             job = credits['crew'][i]['job']
             if job == 'Director':
+                # director name and id
                 director = credits['crew'][i]['name']
-                directorProfile = "https://image.tmdb.org/t/p/w185" + credits['crew'][i]['profile_path']
+                directorID = credits['crew'][i]['id']
                 directorFound = True
             i += 1
         
@@ -185,6 +183,12 @@ def findMovie():
         executeQuery(f'''INSERT INTO movies(title, actor1, actor2, actor3, actor4, actor5, director, date, movieDesc, posterPath, movieRecommended1, movieRecommended2, movieRecommended3)
              VALUES (\'{movieTitle}\',\'{actor1}\',\'{actor2}\',\'{actor3}\',\'{actor4}\',\'{actor5}\',\'{director}\',\'{today}\', \'{movieDesc}\' , \'{posterPath}\', \'{movieRecommended1}\', \'{movieRecommended2}\', \'{movieRecommended3}\')''')
         
+        #im just making this table so that at midnight ill be able to check if this is the best way to get the paths. Cause if so, I'll add it into the other table. 
+        #so to clarify, if it would work, I'll save the ids into the SQL instead of the names. Then I'll use the ids to get the paths and also any other info we need. 
+        # It'll be cleaner
+        executeQuery(f'''INSERT INTO actors(actor1ID,actor2ID,actor3ID,actor4ID,actor5ID,directorID,movieDay) VALUES 
+                     (\'{actor1ID}\', \'{actor2ID}\', \'{actor3ID}\', \'{actor4ID}\', \'{actor5ID}\', \'{directorID}\', \'{today}\')''')
+       
     else:
 
         # otherwise, pull the data from the row into the global variables
@@ -202,16 +206,7 @@ def findMovie():
         movieRecommended2 = row[10]
         movieRecommended3 = row[11]
 
-    print('******************************')
-    print('******************************')
-    print(todaysMovie)
-    print('******************************')
-    print('******************************')
-    print('******************************')
-    print('******************************')
-    print(todaysMovieInfo)
-    print('******************************')
-    print('******************************')
+
 
 # run at the start, finds today's movie then passes through all necessary info
 @app.route('/')
