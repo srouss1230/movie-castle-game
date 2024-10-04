@@ -164,12 +164,26 @@ def findMovie():
         actor3 = credits['cast'][4]['name']
         actor4 = credits['cast'][1]['name']
         actor5 = credits['cast'][0]['name']
+
+        # this finds the tmdb profile paths from all the actors
+        actor1Profile = "https://image.tmdb.org/t/p/w185" + credits['cast'][2]['profile_path']
+        print('******************************')
+        print('******************************')
+        print(actor1Profile)
+        print('******************************')
+        print('******************************')
+        actor2Profile = "https://image.tmdb.org/t/p/w185" + credits['cast'][3]['profile_path']
+        actor3Profile = "https://image.tmdb.org/t/p/w185" + credits['cast'][4]['profile_path']
+        actor4Profile = "https://image.tmdb.org/t/p/w185" + credits['cast'][1]['profile_path']
+        actor5Profile = "https://image.tmdb.org/t/p/w185" + credits['cast'][0]['profile_path']
+
         directorFound = False
         i = 0
         while not directorFound:
             job = credits['crew'][i]['job']
             if job == 'Director':
                 director = credits['crew'][i]['name']
+                directorProfile = "https://image.tmdb.org/t/p/w185" + credits['crew'][i]['profile_path']
                 directorFound = True
             i += 1
         
