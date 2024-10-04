@@ -138,6 +138,16 @@ def findMovie():
         movieID = movie['id']
         todaysMovie = tmdb.Movies(movieID)
         todaysMovieInfo = todaysMovie.info()
+        print('******************************')
+        print('******************************')
+        print(todaysMovie)
+        print('******************************')
+        print('******************************')
+        print('******************************')
+        print('******************************')
+        print(todaysMovieInfo)
+        print('******************************')
+        print('******************************')
         movieTitle = todaysMovieInfo['original_title']
         credits = todaysMovie.credits()
         
