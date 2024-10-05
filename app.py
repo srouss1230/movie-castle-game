@@ -120,9 +120,12 @@ def findMovie():
     today = datetime.today().strftime('%Y-%m-%d') # sets the today variable to today in the specific string format
 
     # selects the movie data from SQL for today's date
-    row = executeQuery(f'''SELECT actor1, actor2, actor3, actor4, actor5, director, title, movieDesc, posterPath, movieRecommended1, movieRecommended2, movieRecommended3
+    row = executeQuery(f'''SELECT actor1, actor2, actor3, actor4, actor5, director, title, movieDesc, posterPath, movieRecommended1, movieRecommended2, movieRecommended3, 
+                       actor1ID, actor2ID, actor3Id, actor4ID, actor5ID, directorID, movieRecommended1ID, movieRecommended2ID, movieRecommended3ID
                     from movies WHERE date=\'{today}\'''')
     
+
+
     # if nothing was returned, pull from TMDB
     if row == None:
         setUpTmdb()
@@ -147,6 +150,11 @@ def findMovie():
         movieRecommended1 = movieRecs['results'][0]["original_title"]
         movieRecommended2 = movieRecs['results'][1]["original_title"]
         movieRecommended3 = movieRecs['results'][2]["original_title"]
+
+        #THIS PART MAY BREAK IT. IDK IF THE ID thing works
+        movieRecommended1ID= movieRecs['results'][0]["id"]
+        movieRecommended2ID = movieRecs['results'][1]["id"]
+        movieRecommended3ID = movieRecs['results'][2]["id"]
         
         # these are ordered in 3rd billed, 4th billed, 5th billed, 2nd billed, 1st billed, director
         actor1 = credits['cast'][2]['name']
@@ -175,13 +183,18 @@ def findMovie():
                 directorFound = True
             i += 1
         
-        # delete from the list 
+        # delete from the list
         test = movieList.remove_item(media_id=movieID)
         print(test['status_message'])
 
         # then insert into SQL
-        executeQuery(f'''INSERT INTO movies(title, actor1, actor2, actor3, actor4, actor5, director, date, movieDesc, posterPath, movieRecommended1, movieRecommended2, movieRecommended3)
-             VALUES (\'{movieTitle}\',\'{actor1}\',\'{actor2}\',\'{actor3}\',\'{actor4}\',\'{actor5}\',\'{director}\',\'{today}\', \'{movieDesc}\' , \'{posterPath}\', \'{movieRecommended1}\', \'{movieRecommended2}\', \'{movieRecommended3}\')''')
+        executeQuery(f'''INSERT INTO movies(title, actor1, actor2, actor3, actor4, actor5, director, date, movieDesc, posterPath, 
+                     movieRecommended1, movieRecommended2, movieRecommended3, actor1ID, actor2ID, actor3ID, actor4ID, actor5ID, 
+                     directorID, movieRecommended1ID, movieRecommended2ID, movieRecommended3ID)
+             VALUES (\'{movieTitle}\',\'{actor1}\',\'{actor2}\',\'{actor3}\',\'{actor4}\',\'{actor5}\',\'{director}\',
+             \'{today}\', \'{movieDesc}\' , \'{posterPath}\', \'{movieRecommended1}\', \'{movieRecommended2}\', 
+             \'{movieRecommended3}\',\'{actor1ID}\',\'{actor2ID}\',\'{actor3ID}\',\'{actor4ID}\',\'{actor5ID}\',
+             \'{directorID}\', \'{movieRecommended1ID}\', \'{movieRecommended2ID}\', \'{movieRecommended3ID}\')''')
         
         #im just making this table so that at midnight ill be able to check if this is the best way to get the paths. Cause if so, I'll add it into the other table. 
         #so to clarify, if it would work, I'll save the ids into the SQL instead of the names. Then I'll use the ids to get the paths and also any other info we need. 
@@ -205,6 +218,15 @@ def findMovie():
         movieRecommended1 = row[9]
         movieRecommended2 = row[10]
         movieRecommended3 = row[11]
+        actor1ID = row[12]
+        actor2ID = row[13]
+        actor3ID = row[14]
+        actor4ID = row[15]
+        actor5ID = row[16]
+        directorID = row[17]
+        movieRecommended1ID = row[18]
+        movieRecommended2ID = row[19]
+        movieRecommended3ID = row[20]
 
 
 
