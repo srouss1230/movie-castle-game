@@ -175,7 +175,7 @@ def findMovie():
                 directorFound = True
             i += 1
         
-        # delete from the list
+        # delete from the list 
         test = movieList.remove_item(media_id=movieID)
         print(test['status_message'])
 
