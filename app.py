@@ -123,7 +123,6 @@ def findMovie():
     row = executeQuery(f'''SELECT actor1, actor2, actor3, actor4, actor5, director, title, movieDesc, posterPath, movieRecommended1, movieRecommended2, movieRecommended3, actor1ID, actor2ID, actor3Id, actor4ID, actor5ID, directorID, movieRecommended1ID, movieRecommended2ID, movieRecommended3ID from movies WHERE date=\'{today}\'''')
     
 
-
     # if nothing was returned, pull from TMDB
     if row == None:
         setUpTmdb()
