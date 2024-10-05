@@ -225,6 +225,15 @@ def findMovie():
         movieRecommended2ID = row[19]
         movieRecommended3ID = row[20]
 
+        #seeing if i can get the actor file path. May have to re-input the code to start a session
+        test = tmdb.People(actor1ID)
+        print("****************")
+        print("****************")
+        print("****************")
+        print(test.images().profiles[0]['file_path'])
+        print("****************")
+        print("****************")
+        print("****************")
 
 
 # run at the start, finds today's movie then passes through all necessary info
