@@ -462,8 +462,8 @@ function guessActor() {
             if(guessNum < 6) {
                 // move on to the next guess
                 guessNum++;
-                unhideGuess(guessNum);
-                revealHint(guessNum);
+                unhidePrevGuess(guessNum);
+                revealNextHint(guessNum);
 
             } else {
                 loseGame();
@@ -473,11 +473,11 @@ function guessActor() {
     $("#guess_input").val("");
 }
 
-function unhideGuess(num) {
+function unhidePrevGuess(num) {
     $( "#guess_" + num ).attr("hidden", false);
 }
 
-function revealHint(num) {
+function revealNextHint(num) {
     $( "#changeImgBtn" + num ).attr("hidden", false);
     $("#changeImgBtn" + num).trigger("click");
 }
