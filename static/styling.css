@@ -327,10 +327,14 @@ tr, th {
     display: flex;
     flex-direction: column;
     width: 50%;
+    align-items: center;
 }
 #header{
     justify-content: center;
 }
 .actor_image{
     width:100%;
+}
+#curImageBox{
+    width:50%;
 }
