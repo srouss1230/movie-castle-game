@@ -226,7 +226,7 @@ def findMovie():
         movieRecommended3ID = row[20]
 
         #seeing if i can get the actor file path. May have to re-input the code to start a session
-        test = tmdb.People(actor1ID, session_id)
+        test = tmdb.People(actor1ID)
         print("****************")
         print("****************")
         print("****************")
