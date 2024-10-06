@@ -449,6 +449,7 @@ changeToImage6 = function(){
 
 function guessActor() {
 
+    // TO DO: Next steps are the make new win and lose game methods that will be called here in place of the old ones
     guess = $( "#cur_guess" ).val();
 
     // post to the server with the inputted guess and then either win the game, move on to the next guess, or lose the game
