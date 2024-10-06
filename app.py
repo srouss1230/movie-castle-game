@@ -230,7 +230,7 @@ def findMovie():
         print("****************")
         print("****************")
         print("****************")
-        print(test.info())
+        print(test.info()['profile_path'])
         #  print(test.images().profiles[0]['file_path'])
         print("****************")
         print("****************")
