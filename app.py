@@ -49,6 +49,12 @@ listSize = 1
 movieArr = {}
 session_id = 0
 list_id = 0
+actor1SrcImage ="temp"
+actor2SrcImage = "temp"
+actor3SrcImage = "temp"
+actor4SrcImage = "temp"
+actor5SrcImage = "temp"
+directorSrcImage ="temp"
 
 def setUpTmdb():
     global listSize
@@ -224,17 +230,24 @@ def findMovie():
         movieRecommended1ID = row[18]
         movieRecommended2ID = row[19]
         movieRecommended3ID = row[20]
+        actor1SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor1ID).info()['profile_path']
+        actor2SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor2ID).info()['profile_path']
+        actor3SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor3ID).info()['profile_path']
+        actor4SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor4ID).info()['profile_path']
+        actor5SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor5ID).info()['profile_path']
+        directorSrcImage ="https://image.tmdb.org/t/p/original" + tmdb.People(directorID).info()['profile_path']
 
-        #seeing if i can get the actor file path. May have to re-input the code to start a session
-        test = tmdb.People(actor1ID)
-        print("****************")
-        print("****************")
-        print("****************")
-        print(test.info()['profile_path'])
-        #  print(test.images().profiles[0]['file_path'])
-        print("****************")
-        print("****************")
-        print("****************")
+        # #seeing if i can get the actor file path. May have to re-input the code to start a session
+        # test = tmdb.People(actor1ID)
+        # print("****************")
+        # print("****************")
+        # print(actor1ID)
+        # print("****************")
+        # print(test.info()['profile_path'])
+        # #  print(test.images().profiles[0]['file_path'])
+        # print("****************")
+        # print("****************")
+        # print("****************")
 
 
 # run at the start, finds today's movie then passes through all necessary info
@@ -242,7 +255,13 @@ def findMovie():
 def home():
 
     findMovie()
-    return render_template('castle.html', title='Cast.le', actor1=actor1, actor2=actor2, actor3=actor3, actor4=actor4, actor5=actor5, director=director, movieTitle=movieTitle,movieDesc=movieDesc, posterPath=posterPath, movieRecommended1=movieRecommended1, movieRecommended2=movieRecommended2, movieRecommended3=movieRecommended3)
+    # makes the main page, and passes through all the necessary info
+    return render_template('castle.html', title='Cast.le', actor1=actor1, actor2=actor2, 
+                           actor3=actor3, actor4=actor4, actor5=actor5, director=director, 
+                           movieTitle=movieTitle,movieDesc=movieDesc, posterPath=posterPath, 
+                           movieRecommended1=movieRecommended1, movieRecommended2=movieRecommended2, 
+                           movieRecommended3=movieRecommended3, actor1SrcImage=actor1SrcImage, 
+                           actor2SrcImage=actor2SrcImage, actor3SrcImage=actor3SrcImage, actor4SrcImage=actor4SrcImage, actor5SrcImage=actor5SrcImage, directorSrcImage=directorSrcImage)
 
 
 # check a guess that is passed through to see if it matches what is in the db
