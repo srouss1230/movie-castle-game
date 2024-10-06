@@ -479,5 +479,5 @@ function unhideGuess(num) {
 
 function revealHint(num) {
     $( "#changeImgBtn" + num ).attr("hidden", false);
-    $("#changeIdgBtn" + num).trigger("click");
+    $("#changeImgBtn" + num).trigger("click");
 }
