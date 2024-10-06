@@ -123,6 +123,13 @@ def findMovie():
     global movieRecommended1
     global movieRecommended2
     global movieRecommended3
+    global actor1SrcImage
+    global actor2SrcImage
+    global actor3SrcImage
+    global actor4SrcImage
+    global actor5SrcImage
+    global directorSrcImage
+
     today = datetime.today().strftime('%Y-%m-%d') # sets the today variable to today in the specific string format
 
     # selects the movie data from SQL for today's date
@@ -172,14 +179,6 @@ def findMovie():
         actor3ID = credits['cast'][4]['id']
         actor4ID = credits['cast'][1]['id']
         actor5ID = credits['cast'][0]['id']
-
-        global actor1SrcImage
-        global actor2SrcImage
-        global actor3SrcImage
-        global actor4SrcImage
-        global actor5SrcImage
-        global directorSrcImage
-
         actor1SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor1ID).info()['profile_path']
         actor2SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor2ID).info()['profile_path']
         actor3SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor3ID).info()['profile_path']
@@ -241,21 +240,13 @@ def findMovie():
         actor4ID = row[15]
         actor5ID = row[16]
         directorID = row[17]
-
-        global actor1SrcImage
-        global actor2SrcImage
-        global actor3SrcImage
-        global actor4SrcImage
-        global actor5SrcImage
-        global directorSrcImage
-
         actor1SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor1ID).info()['profile_path']
         actor2SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor2ID).info()['profile_path']
         actor3SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor3ID).info()['profile_path']
         actor4SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor4ID).info()['profile_path']
         actor5SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor5ID).info()['profile_path']
         directorSrcImage ="https://image.tmdb.org/t/p/original" + tmdb.People(directorID).info()['profile_path']
-        
+
         movieRecommended1ID = row[18]
         movieRecommended2ID = row[19]
         movieRecommended3ID = row[20]
