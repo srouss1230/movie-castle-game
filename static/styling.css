@@ -331,3 +331,6 @@ tr, th {
 #header{
     justify-content: center;
 }
+.actor_image{
+    width:100%;
+}
