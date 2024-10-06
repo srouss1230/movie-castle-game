@@ -253,7 +253,6 @@ def findMovie():
 # run at the start, finds today's movie then passes through all necessary info
 @app.route('/')
 def home():
-
     findMovie()
     # makes the main page, and passes through all the necessary info
     return render_template('castle.html', title='Cast.le', actor1=actor1, actor2=actor2, 
@@ -261,7 +260,9 @@ def home():
                            movieTitle=movieTitle,movieDesc=movieDesc, posterPath=posterPath, 
                            movieRecommended1=movieRecommended1, movieRecommended2=movieRecommended2, 
                            movieRecommended3=movieRecommended3, actor1SrcImage=actor1SrcImage, 
-                           actor2SrcImage=actor2SrcImage, actor3SrcImage=actor3SrcImage, actor4SrcImage=actor4SrcImage, actor5SrcImage=actor5SrcImage, directorSrcImage=directorSrcImage)
+                           actor2SrcImage=actor2SrcImage, actor3SrcImage=actor3SrcImage, 
+                           actor4SrcImage=actor4SrcImage, actor5SrcImage=actor5SrcImage, 
+                           directorSrcImage=directorSrcImage)
 
 
 # check a guess that is passed through to see if it matches what is in the db
