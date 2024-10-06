@@ -449,7 +449,7 @@ changeToImage6 = function(){
 
 function guessActor() {
 
-    guess = $( "#guess_input" ).val();
+    guess = $( "#cur_guess" ).val();
 
     // post to the server with the inputted guess and then either win the game, move on to the next guess, or lose the game
     $.post('/guess', {guess:guess}, function(data) {
