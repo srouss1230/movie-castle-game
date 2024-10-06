@@ -331,3 +331,56 @@ alertWinsIn6 = function()
 {
     alert("wins in 6: " + getWinsIn6());
 }
+
+
+// NEW STUFF FOR TESTING
+
+// Code to change which image you see
+changeToImage1 = function(){
+    $( "#image1" ).attr("hidden", false);
+    $( "#image2" ).attr("hidden", true);
+    $( "#image3" ).attr("hidden", true);
+    $( "#image4" ).attr("hidden", true);
+    $( "#image5" ).attr("hidden", true);
+    $( "#image6" ).attr("hidden", true);
+}
+changeToImage2 = function(){
+    $( "#image1" ).attr("hidden", true);
+    $( "#image2" ).attr("hidden", false);
+    $( "#image3" ).attr("hidden", true);
+    $( "#image4" ).attr("hidden", true);
+    $( "#image5" ).attr("hidden", true);
+    $( "#image6" ).attr("hidden", true);
+}
+changeToImage3 = function(){
+    $( "#image1" ).attr("hidden", true);
+    $( "#image2" ).attr("hidden", true);
+    $( "#image3" ).attr("hidden", false);
+    $( "#image4" ).attr("hidden", true);
+    $( "#image5" ).attr("hidden", true);
+    $( "#image6" ).attr("hidden", true);
+}
+changeToImage4 = function(){
+    $( "#image1" ).attr("hidden", true);
+    $( "#image2" ).attr("hidden", true);
+    $( "#image3" ).attr("hidden", true);
+    $( "#image4" ).attr("hidden", false);
+    $( "#image5" ).attr("hidden", true);
+    $( "#image6" ).attr("hidden", true);
+}
+changeToImage5 = function(){
+    $( "#image1" ).attr("hidden", true);
+    $( "#image2" ).attr("hidden", true);
+    $( "#image3" ).attr("hidden", true);
+    $( "#image4" ).attr("hidden", true);
+    $( "#image5" ).attr("hidden", false);
+    $( "#image6" ).attr("hidden", true);
+}
+changeToImage6 = function(){
+    $( "#image1" ).attr("hidden", true);
+    $( "#image2" ).attr("hidden", true);
+    $( "#image3" ).attr("hidden", true);
+    $( "#image4" ).attr("hidden", true);
+    $( "#image5" ).attr("hidden", true);
+    $( "#image6" ).attr("hidden", false);
+}
