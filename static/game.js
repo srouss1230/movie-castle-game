@@ -337,50 +337,112 @@ alertWinsIn6 = function()
 
 // Code to change which image you see
 changeToImage1 = function(){
+
+    // Hide the other images and show the chosen one
     $( "#image1" ).attr("hidden", false);
     $( "#image2" ).attr("hidden", true);
     $( "#image3" ).attr("hidden", true);
     $( "#image4" ).attr("hidden", true);
     $( "#image5" ).attr("hidden", true);
     $( "#image6" ).attr("hidden", true);
+
+    // Hide the other image names and show the chosen one
+    $("#image1Name").attr("hidden", false);
+    $("#image2Name").attr("hidden", true);
+    $("#image3Name").attr("hidden", true);
+    $("#image4Name").attr("hidden", true);
+    $("#image5Name").attr("hidden", true);
+    $("#image6Name").attr("hidden", true);
 }
 changeToImage2 = function(){
+
+    // Hide the other images and show the chosen one
     $( "#image1" ).attr("hidden", true);
     $( "#image2" ).attr("hidden", false);
     $( "#image3" ).attr("hidden", true);
     $( "#image4" ).attr("hidden", true);
     $( "#image5" ).attr("hidden", true);
     $( "#image6" ).attr("hidden", true);
+
+    // Hide the other image names and show the chosen one
+    $("#image1Name").attr("hidden", true);
+    $("#image2Name").attr("hidden", false);
+    $("#image3Name").attr("hidden", true);
+    $("#image4Name").attr("hidden", true);
+    $("#image5Name").attr("hidden", true);
+    $("#image6Name").attr("hidden", true);
+
 }
 changeToImage3 = function(){
+
+    // Hide the other images and show the chosen one
     $( "#image1" ).attr("hidden", true);
     $( "#image2" ).attr("hidden", true);
     $( "#image3" ).attr("hidden", false);
     $( "#image4" ).attr("hidden", true);
     $( "#image5" ).attr("hidden", true);
     $( "#image6" ).attr("hidden", true);
+
+    // Hide the other image names and show the chosen one
+    $("#image1Name").attr("hidden", true);
+    $("#image2Name").attr("hidden", true);
+    $("#image3Name").attr("hidden", false);
+    $("#image4Name").attr("hidden", true);
+    $("#image5Name").attr("hidden", true);
+    $("#image6Name").attr("hidden", true);
 }
 changeToImage4 = function(){
+
+    // Hide the other images and show the chosen one
     $( "#image1" ).attr("hidden", true);
     $( "#image2" ).attr("hidden", true);
     $( "#image3" ).attr("hidden", true);
     $( "#image4" ).attr("hidden", false);
     $( "#image5" ).attr("hidden", true);
     $( "#image6" ).attr("hidden", true);
+
+    // Hide the other image names and show the chosen one
+    $("#image1Name").attr("hidden", true);
+    $("#image2Name").attr("hidden", true);
+    $("#image3Name").attr("hidden", true);
+    $("#image4Name").attr("hidden", false);
+    $("#image5Name").attr("hidden", true);
+    $("#image6Name").attr("hidden", true);
 }
 changeToImage5 = function(){
+
+    // Hide the other images and show the chosen one
     $( "#image1" ).attr("hidden", true);
     $( "#image2" ).attr("hidden", true);
     $( "#image3" ).attr("hidden", true);
     $( "#image4" ).attr("hidden", true);
     $( "#image5" ).attr("hidden", false);
     $( "#image6" ).attr("hidden", true);
+
+    // Hide the other image names and show the chosen one
+    $("#image1Name").attr("hidden", true);
+    $("#image2Name").attr("hidden", true);
+    $("#image3Name").attr("hidden", true);
+    $("#image4Name").attr("hidden", true);
+    $("#image5Name").attr("hidden", false);
+    $("#image6Name").attr("hidden", true);
+
 }
 changeToImage6 = function(){
+
+    // Hide the other images and show the chosen one
     $( "#image1" ).attr("hidden", true);
     $( "#image2" ).attr("hidden", true);
     $( "#image3" ).attr("hidden", true);
     $( "#image4" ).attr("hidden", true);
     $( "#image5" ).attr("hidden", true);
     $( "#image6" ).attr("hidden", false);
+
+    // Hide the other image names and show the chosen one
+    $("#image1Name").attr("hidden", true);
+    $("#image2Name").attr("hidden", true);
+    $("#image3Name").attr("hidden", true);
+    $("#image4Name").attr("hidden", true);
+    $("#image5Name").attr("hidden", true);
+    $("#image6Name").attr("hidden", false);
 }
