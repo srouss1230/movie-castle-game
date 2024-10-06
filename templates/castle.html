@@ -289,6 +289,12 @@
         $("#changeImgBtn4").click(changeToImage4);
         $("#changeImgBtn5").click(changeToImage5);
         $("#changeImgBtn6").click(changeToImage6);
+        $("#submit_guess").click(guessActor);
+        $( "#curGuess" ).keyup( function(event) {
+            if(event.which === 13) {
+                $("#submit_guess").click();
+            }
+        });
 
         
         

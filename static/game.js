@@ -446,3 +446,38 @@ changeToImage6 = function(){
     $("#image5Name").attr("hidden", true);
     $("#image6Name").attr("hidden", false);
 }
+
+function guessActor() {
+
+    guess = $( "#guess_input" ).val();
+
+    // post to the server with the inputted guess and then either win the game, move on to the next guess, or lose the game
+    $.post('/guess', {guess:guess}, function(data) {
+        $( "#guess_" + guessNum ).html("<p> " + guess + " </p>");
+        if(data.correct) {
+            $( "#guess_" + guessNum ).attr("style", "color: #20ff20"); // make the guess green
+            winGame();
+        } else {
+            $( "#guess_" + guessNum ).attr("style", "color: #ff1111"); // make the guess red
+            if(guessNum < 6) {
+                // move on to the next guess
+                guessNum++;
+                unhideGuess(guessNum);
+                revealHint(guessNum);
+
+            } else {
+                loseGame();
+            }
+        }
+    }, "json");
+    $("#guess_input").val("");
+}
+
+function unhideGuess(num) {
+    $( "#guess_" + num ).attr("hidden", false);
+}
+
+function revealHint(num) {
+    $( "#changeImgBtn" + num ).attr("hidden", false);
+    $("#changeIdgBtn" + num).trigger("click");
+}
