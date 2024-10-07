@@ -184,7 +184,6 @@ def findMovie():
         actor3SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor3ID).info()['profile_path']
         actor4SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor4ID).info()['profile_path']
         actor5SrcImage = "https://image.tmdb.org/t/p/original" + tmdb.People(actor5ID).info()['profile_path']
-        directorSrcImage ="https://image.tmdb.org/t/p/original" + tmdb.People(directorID).info()['profile_path']
 
         #theoretically the images should be  https://api.themoviedb.org/3/person/{person_id}/images[profiles][0][file_path]
 
@@ -199,6 +198,8 @@ def findMovie():
                 directorFound = True
             i += 1
         
+        directorSrcImage ="https://image.tmdb.org/t/p/original" + tmdb.People(directorID).info()['profile_path']
+
         # delete from the list
         test = movieList.remove_item(media_id=movieID)
         print(test['status_message'])
