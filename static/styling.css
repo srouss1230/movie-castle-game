@@ -318,7 +318,7 @@ tr, th {
 }
 
 /* NEW STUFF */
-#main_content{
+#ImageAndGuesses{
     display: flex;
     flex-direction: row;
     justify-content: space-around;

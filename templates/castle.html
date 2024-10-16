@@ -209,7 +209,7 @@
     <div id = "header">
         <h1> {{ title }} </h1>
     </div>
-    < <div id = "curImageName">
+    <div id = "curImageName">
         <h1 id = "image1Name"> {{ actor1 }} </h1>
         <h1 id = "image2Name" hidden> {{ actor2 }} </h1>
         <h1 id = "image3Name" hidden> {{ actor3 }} </h1>
@@ -217,7 +217,7 @@
         <h1 id = "image5Name" hidden> {{ actor5 }} </h1>
         <h1 id = "image6Name" hidden> {{ director }} </h1>
     </div>
-    <div id = "main_content">
+    <div id = "ImageAndGuesses">
          <div id = "left_main_content">    
             <div id = "curImageBox">
                 <img class = "actor_image" id = "image1" src = "{{ actor1SrcImage }}" alt = "image not found">
@@ -227,17 +227,8 @@
                 <img class = "actor_image" id = "image5" src = "{{ actor5SrcImage }}" alt = "image not found" hidden>
                 <img class = "actor_image" id = "image6" src = "{{ directorSrcImage }}" alt = "image not found" hidden>
             </div>
-            <div>
-                <button class = "changeImgBtn" id = "changeImgBtn1">1</button>
-                <button class = "changeImgBtn" id = "changeImgBtn2" hidden>2</button>
-                <button class = "changeImgBtn" id = "changeImgBtn3" hidden>3</button>
-                <button class = "changeImgBtn" id = "changeImgBtn4" hidden>4</button>
-                <button class = "changeImgBtn" id = "changeImgBtn5" hidden>5</button>
-                <button class = "changeImgBtn" id = "changeImgBtn6" hidden>6</button>
-            </div>
         </div>
         <div id = "right_main_content">
-    
             <div id = "cur_guess_box">
                 <input type = "text" id = "cur_guess" placeholder = "Enter your guess">
                 <button id = "submit_guess">Submit</button>
@@ -251,6 +242,15 @@
                 <div class = "prev_guess_line" id = "guess_6"></div>
             </div>
         </div>
+    </div>
+
+    <div>
+        <button class = "changeImgBtn" id = "changeImgBtn1">1</button>
+        <button class = "changeImgBtn" id = "changeImgBtn2" hidden>2</button>
+        <button class = "changeImgBtn" id = "changeImgBtn3" hidden>3</button>
+        <button class = "changeImgBtn" id = "changeImgBtn4" hidden>4</button>
+        <button class = "changeImgBtn" id = "changeImgBtn5" hidden>5</button>
+        <button class = "changeImgBtn" id = "changeImgBtn6" hidden>6</button>
     </div>
    
 
