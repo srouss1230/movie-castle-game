@@ -471,7 +471,7 @@ function guessActor() {
             }
         }
     }, "json");
-    $("#guess_input").val("");
+    $("#cur_guess").val("");
 }
 
 function unhidePrevGuess(num) {
