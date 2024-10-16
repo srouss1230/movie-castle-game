@@ -230,8 +230,9 @@
         </div>
         <div id = "right_main_content">
             <div id = "cur_guess_box">
-                <input type = "text" id = "cur_guess" placeholder = "Enter your guess">
+                <input type = "text" id = "cur_guess" placeholder = "Enter your guess" autofocus>
                 <button id = "submit_guess">Submit</button>
+
             </div>
             <div id = "previous_guess">
                 <div class = "prev_guess_line" id = "guess_1"></div>
@@ -261,15 +262,11 @@
         // set up all event listeners for anything on the page
 
         $("#search_btn").click(submitGuess);
-
-        //COMMENTED OUT THE OLD 'ENTER' processes your guess because I think it was not letting the same work below
-
-        // $( "#guess_input" ).keyup( function(event) {
-        //     if(event.which === 13) {
-        //         $("#search_btn").click();
-        //     }
-        // });
-        
+        $( "#guess_input" ).keyup( function(event) {
+            if(event.which === 13) {
+                $("#search_btn").click();
+            }
+        });
         $("#close_instr_btn").click(hideInstructions);
         $("#openMovieDetails").click(showMovieDetails);
         $("#closeMovieDetails").click(hideMovieDetails);
