@@ -327,7 +327,13 @@ tr, th {
     display: flex;
     flex-direction: column;
     width: 50%;
-    align-items: center;
+    align-items: flex-end;
+}
+#right_main_content{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: flex-start;
 }
 #header{
     justify-content: center;
