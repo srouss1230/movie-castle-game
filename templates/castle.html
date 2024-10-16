@@ -294,7 +294,7 @@
         $("#submit_guess").click(guessActor);
         $( "#curGuess" ).keyup( function(event) {
             if(event.which === 13) {
-                $("#submit_guess").trigger("click");
+                $("#submit_guess").click();
             }
         });
 
