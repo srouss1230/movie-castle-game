@@ -457,7 +457,7 @@ function guessActor() {
         $( "#guess_" + guessNum ).html("<p> " + guess + " </p>");
         if(data.correct) {
             $( "#guess_" + guessNum ).attr("style", "color: #20ff20"); // make the guess green
-            winGame();
+            winGameNew();
         } else {
             $( "#guess_" + guessNum ).attr("style", "color: #ff1111"); // make the guess red
             if(guessNum < 6) {
@@ -481,4 +481,27 @@ function unhidePrevGuess(num) {
 function revealNextHint(num) {
     $( "#changeImgBtn" + num ).attr("hidden", false);
     $("#changeImgBtn" + num).trigger("click");
+}
+
+// do everything needed to win the game
+function winGameNew() {
+    // Reveal all image buttons
+    for(let i = 2; i <= 6; i++) {
+        revealNextHint(i);
+    }
+
+    updateStatsInLS();
+    $( "#guess_input" ).attr("hidden", true);
+    $( "#search_btn" ).attr("hidden", true);
+    $( "#end_screen" ).attr("hidden", false);
+    $( "#win_screen" ).attr("hidden", false);
+    if(guessNum == 1) {
+        $( "#win_screen" ).html("You won in " + guessNum + " try!");
+    } else {
+        $( "#win_screen" ).html("You won in " + guessNum + " tries!");
+    }
+    document.getElementById("sharable_result").innerHTML = ("I won CAST.LE in " + guessNum + " tries");
+    $( "#movie_title" ).attr("hidden", false);
+
+    updateStats(true);
 }
