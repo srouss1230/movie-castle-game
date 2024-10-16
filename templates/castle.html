@@ -31,7 +31,7 @@
         <img src = "{{ directorSrcImage }}" alt = "image not found">
     </div> -->
 
-    <div id="full_page" class="full_page">
+    <!-- <div id="full_page" class="full_page">
 
         <div id="page_contents" class="page_contents">
 
@@ -198,17 +198,28 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 <!-- THIS IS WHERE THE NEW STUFF IM TESTING IS GOING FOR NOW -->
-    <br>
-    <br>   
-    <br>
-    <br>
-    <br>
     <br>
     <div id = "header">
         <h1> {{ title }} </h1>
     </div>
+
+    <div id="instr" class="instr_window">
+        <h1 class = "instr_heading"> WELCOME TO CAST.LE!! </h1>
+        <p class = "instr_text">
+            The goal is to guess the film based on the actors. If you don't get it after 5, you get one last shot: The director.  
+        </p>
+        <br>
+        <br>
+        <p class = "instr_text">
+            Not to give you too much of a hint, but the order of actors means guessing the movie on attempts 1-3 is much more difficult than on 4-6.
+        </p>
+        <div class="close_btn_div">
+            <button class = "close_instr_btn" id="close_instr_btn"> Close </button>
+        </div>
+    </div>
+    
     <div id = "curImageName">
         <h1 id = "image1Name"> {{ actor1 }} </h1>
         <h1 id = "image2Name" hidden> {{ actor2 }} </h1>
