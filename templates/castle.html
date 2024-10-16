@@ -261,11 +261,15 @@
         // set up all event listeners for anything on the page
 
         $("#search_btn").click(submitGuess);
-        $( "#guess_input" ).keyup( function(event) {
-            if(event.which === 13) {
-                $("#search_btn").click();
-            }
-        });
+
+        //COMMENTED OUT THE OLD 'ENTER' processes your guess because I think it was not letting the same work below
+
+        // $( "#guess_input" ).keyup( function(event) {
+        //     if(event.which === 13) {
+        //         $("#search_btn").click();
+        //     }
+        // });
+        
         $("#close_instr_btn").click(hideInstructions);
         $("#openMovieDetails").click(showMovieDetails);
         $("#closeMovieDetails").click(hideMovieDetails);
