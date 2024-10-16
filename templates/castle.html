@@ -209,19 +209,16 @@
     <div id = "header">
         <h1> {{ title }} </h1>
     </div>
+    < <div id = "curImageName">
+        <h1 id = "image1Name"> {{ actor1 }} </h1>
+        <h1 id = "image2Name" hidden> {{ actor2 }} </h1>
+        <h1 id = "image3Name" hidden> {{ actor3 }} </h1>
+        <h1 id = "image4Name" hidden> {{ actor4 }} </h1>
+        <h1 id = "image5Name" hidden> {{ actor5 }} </h1>
+        <h1 id = "image6Name" hidden> {{ director }} </h1>
+    </div>
     <div id = "main_content">
-        <div id = "curImageName">
-            <h1 id = "image1Name"> {{ actor1 }} </h1>
-            <h1 id = "image2Name" hidden> {{ actor2 }} </h1>
-            <h1 id = "image3Name" hidden> {{ actor3 }} </h1>
-            <h1 id = "image4Name" hidden> {{ actor4 }} </h1>
-            <h1 id = "image5Name" hidden> {{ actor5 }} </h1>
-            <h1 id = "image6Name" hidden> {{ director }} </h1>
-        </div>
-        <div id = "left_main_content">
-            
-           
-
+         <div id = "left_main_content">    
             <div id = "curImageBox">
                 <img class = "actor_image" id = "image1" src = "{{ actor1SrcImage }}" alt = "image not found">
                 <img class = "actor_image" id = "image2" src = "{{ actor2SrcImage }}" alt = "image not found" hidden>
@@ -240,9 +237,7 @@
             </div>
         </div>
         <div id = "right_main_content">
-            <div id = "curImageName">
-                <!-- Div to account for extra space on top -->
-            </div>
+    
             <div id = "cur_guess_box">
                 <input type = "text" id = "cur_guess" placeholder = "Enter your guess">
                 <button id = "submit_guess">Submit</button>
