@@ -341,6 +341,7 @@ tr, th {
 }
 #header{
     text-align: center;
+    margin-bottom:10%;
 }
 .actor_image{
     width:100%;
@@ -352,8 +353,13 @@ tr, th {
     display: flex;
     justify-self: center;
     justify-content: space-between;
-    width:50%;
 }
 #curImageName{
     text-align: center;
+}
+
+#ChangeBtnContainerWrapper{
+    display: flex;
+    justify-content: center;
+    width:50%
 }
