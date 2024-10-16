@@ -327,7 +327,7 @@ tr, th {
     display: flex;
     flex-direction: column;
     width: 50%;
-    align-items: flex-end;
+    align-items: center;
 }
 #right_main_content{
     display: flex;
