@@ -327,13 +327,15 @@ tr, th {
     display: flex;
     flex-direction: column;
     width: 50%;
-    align-items: center;
+    align-items: flex-end;
+    margin-right:1%;
 }
 #right_main_content{
     display: flex;
     flex-direction: column;
     width: 50%;
     align-items: flex-start;
+    margin-left:1%;
 }
 #header{
     justify-content: center;
