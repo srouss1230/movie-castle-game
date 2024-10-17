@@ -1,7 +1,7 @@
 :root {
     --textAreaHt: 25px;
     --sectionMargin: 10px;
-    background-color: aqua;
+    background-color: black;
 }
 
 p {
@@ -365,4 +365,7 @@ tr, th {
     position: relative;
     left: 25%;
     justify-content: center;
+}
+#everything_on_page{
+    background-color:white;
 }
