@@ -26,6 +26,9 @@ function logInUser() {
 function hideInstructions() {
     $( "#instr" ).attr("hidden", true);
 }
+function hideInstructions2() {
+    $( "#instr2" ).attr("hidden", true);
+}
 
 // used with the share button to copy a string to the clipboard
 function shareResult(){
