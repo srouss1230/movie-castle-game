@@ -369,3 +369,7 @@ tr, th {
 #everything_on_page{
     background-color:white;
 }
+
+#everything_on_page > div{
+    width:50%;
+}
